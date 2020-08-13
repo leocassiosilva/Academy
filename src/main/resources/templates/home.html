@@ -5,19 +5,48 @@
 <title>Projeto Academy</title>
 <meta name="author" content="Francisco Leocassio" />
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="#">Navbar</a>
+			<a class="navbar-brand" href="#"><img alt=""
+				src="img/logo_header-site.png" /></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navMobile">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
+			<div id="navMobile"
+				class="navbar-collapse collapse justify-content-end">
+				<a class="nav-item nav-link">Home</a> <a class="nav-item nav-link">Cadastrar
+					Aluno</a> <a class="nav-item nav-link">Pesquisar Aluno</a> <a
+					class="nav-item nav-link btn-danger">Sair</a>
+
+			</div>
 		</nav>
 	</header>
 
 
-	<h1>Hello Word!</h1>
-	<a class="btn btn-danger">Danger</a>
+	<section class="neo-section"
+		style="background-image: url('img/bg-index.jpg');">
+
+		<div class="sombra"></div>
+		<div class="center neo-container">
+			<h1 class="texto-centro">Sistema de Gerenciamento de Estudantes</h1>
+
+			<div class="botoes" style="text-align: center;">
+				<div class="btn-group wm" role="group" aria-label="Terceiro grupo" style="padding-left: 30px;">
+					<button class="btn btn-primary">Cadastrar Aluno</button>
+				</div>
+				<div class="btn-group wm" role="group" aria-label="Terceiro grupo" style="padding-left: 30px;">
+					<button class="btn btn-success ">Encontrar Aluno</button>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</section>
 
 
 	<script src="/webjars/jquery/jquery.min.js"></script>
