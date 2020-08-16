@@ -27,7 +27,7 @@
 
 			<div class="row">
 				<div class="col-md-6 form-group offset-md-3">
-					<label>Curso</label> <select class="form-control">
+					<label>Curso</label> <select class="form-control" th:field="*{curso}">
 						<option th:each="c :${T(br.com.academy.Enums.Curso).values()}"
 							th:value="${c}" th:text="${c}">Administração</option>
 					</select>
@@ -52,11 +52,24 @@
 				<div class="col-md-6 form-group offset-md-3">
 					<label>Status </label> 
 					
-					<select class="form-control">
+					<select class="form-control" th:field="*{status}">
 						<option th:each="s :${T(br.com.academy.Enums.Status).values()}" th:value="${s}" th:text="${s}"></option>
 					</select>
 				</div>
 			</div>
+			
+			<!-- Curso -->
+
+			<div class="row">
+				<div class="col-md-6 form-group offset-md-3">
+					<label>Curso</label> <select class="form-control" th:field="*{turno}">
+						<option th:each="t :${T(br.com.academy.Enums.Turno).values()}"
+							th:value="${t}" th:text="${t}">Administração</option>
+					</select>
+				</div>
+			</div>
+			
+			
 			
 			<!-- Button para submeter -->		
 			
