@@ -23,12 +23,22 @@ public class AlunoController {
 		return mv;
 	}
 	
+	/*Metodo para cadastrar alunos*/
 	@PostMapping("cadastrarAlunos")
 	public ModelAndView inserirAluno(Aluno aluno) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("redirect:/Aluno/lista");
+		mv.setViewName("redirect:/listarAlunos");
 		alunorepository.save(aluno);
 		return mv;
 	
 	}
+	
+	@GetMapping("listarAlunos")
+	public ModelAndView listar() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("Aluno/lista");
+		mv.addObject("alunosList", alunorepository.findAll());
+		return mv;
+	}
+	
 }
