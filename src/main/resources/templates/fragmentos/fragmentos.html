@@ -2,6 +2,7 @@
 <html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
 <head>
 <meta charset="UTF-8" />
 <title>Projeto Academy</title>
@@ -9,6 +10,7 @@
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
 
@@ -24,8 +26,9 @@
 
 			<div id="navMobile"
 				class="navbar-collapse collapse justify-content-end">
-				<a class="nav-item nav-link">Home</a> <a class="nav-item nav-link">Cadastrar
-					Aluno</a> <a class="nav-item nav-link">Pesquisar Aluno</a> <a
+				<a class="nav-item nav-link">Home</a> <a class="nav-item nav-link"
+					th:href="@{/cadastrarAlunos}">Cadastrar Aluno</a> <a
+					class="nav-item nav-link">Pesquisar Aluno</a> <a
 					class="nav-item nav-link btn-danger">Sair</a>
 
 			</div>
@@ -40,8 +43,8 @@
 		</div>
 	</footer>
 
-
 	<script src="/webjars/jquery/jquery.min.js"></script>
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </body>
+
 </html>

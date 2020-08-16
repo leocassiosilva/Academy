@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Projeto Academy - Cadastrar Alunos</title>
+<meta name="author" content="Francisco Leocassio" />
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+
+	<div class="container" style="margin-top: 20px;">
+		<h4 style="text-align: center;">Cadastrar Alunos</h4>
+		<hr>
+
+		<form method="post" action="/cadastrarAlunos" th:object="${aluno}">
+
+			<div class="row">
+				<div class="col-md-6 form-group offset-md-3">
+					<label>Nome </label> <input class="form-control"
+						placeholder="Ex: Francisco Leocassio" th:field="*{nome}" />
+				</div>
+			</div>
+
+			<!-- Curso -->
+
+			<div class="row">
+				<div class="col-md-6 form-group offset-md-3">
+					<label>Curso</label> <select class="form-control">
+						<option th:each="c :${T(br.com.academy.Enums.Curso).values()}"
+							th:value="${c}" th:text="${c}">Administração</option>
+					</select>
+				</div>
+			</div>
+
+
+			<!-- Matricula -->
+			<div class="row">
+				<div class="col-md-6 form-group offset-md-3">
+					<label>Gerar Matricula </label> <input class="form-control"
+						id="matricula" th:field="*{matricula}" />
+
+					<button type="button" onclick="GerarMatricula();"
+						class="btn btn-dark" style="margin-top: 10px;">Gerar</button>
+				</div>
+			</div>
+			
+			
+			<!-- Status -->
+			<div class="row">
+				<div class="col-md-6 form-group offset-md-3">
+					<label>Status </label> 
+					
+					<select class="form-control">
+						<option th:each="s :${T(br.com.academy.Enums.Status).values()}" th:value="${s}" th:text="${s}"></option>
+					</select>
+				</div>
+			</div>
+			
+			<!-- Button para submeter -->		
+			
+			<div class="row">
+				
+				<button type="submit" class="btn btn-success offset-md-5"> Salvar</button>
+				&nbsp;
+				<a class="btn btn-outline-danger"> Voltar</a>
+			</div>
+		
+		</form>
+	</div>
+	<script>
+		function GerarMatricula() {
+			var txt = "ACA";
+			var aleatorio = Math.floor(Math.random() * 1500);
+
+			document.getElementById("matricula").value = (txt + aleatorio);
+		}
+	</script>
+</body>
+</html>
